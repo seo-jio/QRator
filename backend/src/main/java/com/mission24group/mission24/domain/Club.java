@@ -22,4 +22,5 @@ public class Club {
     @OneToMany(mappedBy = "club")
     private List<User> users = new ArrayList<>();
 
+//    private List<String> temp = new ArrayList<>();
 }
