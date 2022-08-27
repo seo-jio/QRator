@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import Router from './router';
 import { Helmet } from 'react-helmet';
+import { RecoilRoot } from 'recoil';
 
 const GlobalStyle = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -38,6 +39,9 @@ footer, header, hgroup, menu, nav, section {
     font-family: 'Roboto', sans-serif;
 
 
+}
+a{
+    text-decoration: none;
 }
 body {
 	line-height: 1;
@@ -82,7 +86,9 @@ function App() {
                     rel='stylesheet'
                 />
             </Helmet>
-            <Router />
+            <RecoilRoot>
+                <Router />
+            </RecoilRoot>
         </>
     );
 }

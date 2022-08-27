@@ -27,7 +27,8 @@ const SignUp = () => {
                 password: password,
                 username: name,
             })
-            .then((response) => console.log(response));
+            .then((response) => console.log(response))
+            .catch((err) => console.log(err));
     };
     return (
         <Container>

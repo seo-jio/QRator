@@ -10,7 +10,7 @@ export const Header = styled.div`
     font-size: 40px;
 `;
 
-export const LoginBox = styled.div`
+export const LoginBox = styled.form`
     height: 220px;
     width: 100%;
     display: flex;
