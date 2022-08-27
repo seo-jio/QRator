@@ -36,7 +36,7 @@ const Information = () => {
 
             <CameraBox style={{ margin: '0 auto' }}>
                 <span
-                    style={{ position: 'relative', left: 27 }}
+                    style={{ margin: '0 auto', position: 'absolute' }}
                     class='material-symbols-outlined'
                 >
                     photo_camera
