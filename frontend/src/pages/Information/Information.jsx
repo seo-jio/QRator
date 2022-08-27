@@ -3,8 +3,21 @@ import { Img } from './Information.style';
 import Lion from '../../assets/lion.png';
 import { Container } from '../../components/Container';
 import { Camera, CameraBox } from '../Entrance/Entrance.styled';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Information = () => {
+    const [qr, setQr] = useState(false);
+    useEffect(() => {
+        axios
+            .get(
+                `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=www.naver.com`
+            )
+            .then((response) => {
+                console.log(response);
+            });
+    }, []);
+
     return (
         <Container
             style={{
@@ -34,7 +47,7 @@ const Information = () => {
 
             <p style={{ margin: '0 auto', marginBottom: 20 }}>010-1234-5678</p>
 
-            <CameraBox style={{ margin: '0 auto' }}>
+            <CameraBox style={{ margin: '0 auto', marginBottom: 20 }}>
                 <span
                     style={{ margin: '0 auto', position: 'absolute' }}
                     class='material-symbols-outlined'
@@ -43,6 +56,12 @@ const Information = () => {
                 </span>
                 <Camera type='file' accept='image/*' capture='camera' />
             </CameraBox>
+
+            <Img
+                src={
+                    'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=www.naver.com'
+                }
+            />
         </Container>
     );
 };
