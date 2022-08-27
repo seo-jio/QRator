@@ -4,11 +4,13 @@ import com.mission24group.mission24.domain.User;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 @Data
+@CrossOrigin(origins = "*")
 public class PrincipalDetails implements UserDetails {
     private User user;
 
