@@ -3,6 +3,7 @@ import { useRecoilValue } from 'recoil';
 import { Container } from '../../components/Container';
 import { ListTab } from '../../components/ListTab';
 import { idState } from '../../recoil/id/id';
+import Information from '../Information';
 import { Header } from '../SignIn/SignIn.styled';
 import { GroupMemberCount, GroupName, ListBox } from './List.styled';
 
@@ -45,7 +46,9 @@ const List = () => {
     return (
         <Container>
             <Header>안녕하세요 {id.id}님!</Header>
-            {params.name ? null : (
+            {params.name ? (
+                <Information />
+            ) : (
                 <ListBox>
                     {data.map((item, index) => (
                         <Link key={index} to={`./${item.id}`}>

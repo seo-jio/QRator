@@ -13,16 +13,10 @@ const SignIn = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        axios
-            .post('/api/login', {
-                email: id,
-                password: password,
-            })
-            .then((response) => console.log(response));
-        // settingId({
-        //     id: id,
-        //     password: password,
-        // });
+        settingId({
+            id: id,
+            password: password,
+        });
         navigate('/list');
     };
     const [id, setId] = useState('');
@@ -38,12 +32,14 @@ const SignIn = () => {
         <Container>
             <Header>Sign In</Header>
             <Text>아이디와 비밀번호를 입력하세요.</Text>
+
             <LoginBox onSubmit={onSubmit}>
                 <Input value={id} onChange={onChangeId} placeholder='아이디' />
                 <Input
                     value={password}
                     placeholder='패스워드'
                     onChange={onChangePassword}
+                    type='password'
                 />
 
                 <Button>로그인</Button>
