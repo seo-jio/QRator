@@ -13,16 +13,16 @@ const SignIn = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        // axios
-        //     .post('/api/login', {
-        //         email: id,
-        //         password: password,
-        //     })
-        //     .then((response) => console.log(response));
-        settingId({
-            id: id,
-            password: password,
-        });
+        axios
+            .post('/api/login', {
+                email: id,
+                password: password,
+            })
+            .then((response) => console.log(response));
+        // settingId({
+        //     id: id,
+        //     password: password,
+        // });
         navigate('/list');
     };
     const [id, setId] = useState('');
