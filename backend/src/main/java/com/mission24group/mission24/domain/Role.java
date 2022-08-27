@@ -1,0 +1,5 @@
+package com.mission24group.mission24.domain;
+
+public enum Role {
+    ROLE_USER, ROLE_ADMIN
+}
