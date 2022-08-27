@@ -25,7 +25,7 @@ public class UserApiController {
 
     @PostMapping("/api/join")
     public Long join(@RequestBody UserJoinDto userJoinDto) {
-        User user = new User(userJoinDto.getEmail(), userJoinDto.getPassword(), userJoinDto.getUsername());
+        User user = new User(userJoinDto.getEmail(), userJoinDto.getUsername());
         String rawPassword = user.getPassword();
         String encPassword = bCryptPasswordEncoder.encode(rawPassword);
         user.setPassword(encPassword);

@@ -25,9 +25,8 @@ public class User {
     @JoinColumn(name = "club_id")
     private Club club;
 
-    public User(String email, String password, String username) {
-        this.id = id;
-        this.password = password;
+    public User(String email, String username) {
+        this.email = email;
         this.username = username;
     }
 }

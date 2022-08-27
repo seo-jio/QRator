@@ -11,5 +11,10 @@
         <module name="mission24.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="qrator" target="17" />
+      <module name="qrator.main" target="17" />
+      <module name="qrator.test" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

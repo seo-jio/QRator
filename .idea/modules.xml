@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/QRator.iml" filepath="$PROJECT_DIR$/.idea/QRator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/qrator.iml" filepath="$PROJECT_DIR$/.idea/modules/qrator.iml" />
     </modules>
   </component>
 </project>

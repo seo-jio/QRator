@@ -10,20 +10,23 @@
 
 spring:
     datasource:
-        url: jdbc:h2:tcp://localhost/~/test
-        username: sa
-        password:
-        driver-class-name: org.h2.Driver
+        url: jdbc:mysql://localhost:3306/beer_community?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
     jpa:
-        show-sql: true
         hibernate:
             ddl-auto: create
-        output:
-            ansi:
-             enabled: always
+        properties:
+            hibernate:
+                show_sql: false
+                format_sql: true
+                default_batch_fetch_size: 100
+        database: mysql
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 logging:
     level:
-        org.hibernate.type: trace
+        org.hibernate.SQL: debug
 
 
 #spring:
