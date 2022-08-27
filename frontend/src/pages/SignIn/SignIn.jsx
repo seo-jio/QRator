@@ -39,6 +39,7 @@ const SignIn = () => {
                     value={password}
                     placeholder='패스워드'
                     onChange={onChangePassword}
+                    type='password'
                 />
 
                 <Button>로그인</Button>
