@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @Configuration
 @RequiredArgsConstructor
 @EnableWebSecurity
-@CrossOrigin(origins = "*")
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Bean
@@ -24,17 +23,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable();
-        http.authorizeRequests()
+        http.cors().and().csrf().disable()
+                .authorizeRequests()
                 .antMatchers("/user/**").authenticated()
-                .antMatchers("/manager/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER')")
                 .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()
-                .loginPage("/loginForm")
-                .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/");
-
+                .loginPage("/api/login")
+                .usernameParameter("email") // ** username이 아니라 email으로 param을 받음 **
+                .loginProcessingUrl("/api/login"); // login주소가 호출되면 Spring Security가 낚아채서 대신 로그인 진행
     }
 }
