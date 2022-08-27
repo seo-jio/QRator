@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestApi {
-
     @GetMapping("/api/hello")
     public String test() {
         return "Hello, world!";
     }
+
 }
