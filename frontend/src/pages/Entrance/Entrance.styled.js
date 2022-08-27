@@ -10,8 +10,11 @@ export const Camera = styled.input`
 `;
 
 export const CameraBox = styled.div`
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50px;
     border: 1px solid #aaa9aa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;

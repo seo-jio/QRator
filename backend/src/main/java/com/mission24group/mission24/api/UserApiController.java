@@ -4,7 +4,7 @@ import com.mission24group.mission24.auth.PrincipalDetails;
 import com.mission24group.mission24.domain.Role;
 import com.mission24group.mission24.domain.User;
 import com.mission24group.mission24.dto.UserJoinDto;
-import com.mission24group.mission24.repository.ClubRepository;
+// import com.mission24group.mission24.repository.ClubRepository;
 import com.mission24group.mission24.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -20,7 +20,7 @@ import java.util.Map;
 public class UserApiController {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
-    private final ClubRepository clubRepository;
+    // private final ClubRepository clubRepository;
 
 
     @PostMapping("/api/join")
@@ -41,7 +41,7 @@ public class UserApiController {
         User user = principalDetails.getUser();
         String username = user.getUsername();
         String email = user.getEmail();
-        String name = user.getUsername();
+        // String name = user.getUsername();
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("username", username);
         map.put("email", email);
