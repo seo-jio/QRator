@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Header = styled.div`
-    height: 230px;
+    height: 130px;
     width: 100%;
     padding: 0;
     display: flex;
@@ -10,7 +10,7 @@ export const Header = styled.div`
     font-size: 40px;
 `;
 
-export const LoginBox = styled.div`
+export const LoginBox = styled.form`
     height: 280px;
     width: 100%;
     display: flex;
